@@ -7,5 +7,6 @@
 //= link global.css
 //= link sidebar.css
 //= link navbar.css
+
 //= link new_project.css
 //= link messages.css
