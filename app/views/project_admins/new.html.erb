@@ -1,0 +1,36 @@
+
+
+<%= stylesheet_link_tag 'new_project' %>
+
+<main class="content-wrap">
+		<header class="content-head">
+			<h1>Add admin for your project</h1>
+				
+			<div class="action">
+				<%# <button> %>
+        <%= link_to 'Back', @project, class: 'button-18' %>
+				<%# </button> %>
+			</div>
+		</header> <br />
+		
+		<div class="content">
+
+	<br>
+
+<br>
+
+<br>
+<div class="center">
+<%= form_with(model: [@project, @project_admin], local: true, class: 'needs-validation') do |form| %>
+    <div class="qwasar">
+    <%= form.select :user_id, User.where.not(id: current_user.id).map { |u| [u.email, u.id] }, {}, { id: "user-select", class: 'form-control', required: true } %>
+    </div>
+    <div class="inputbox">
+	  <%= form.submit 'Save Project' %>
+    </div>
+  <% end %>
+</div>
+
+<br>
+		</div>
+	</main>

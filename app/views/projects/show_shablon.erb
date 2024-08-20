@@ -1,0 +1,40 @@
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class="container mt-5">
+<div class="card">
+  <h1 class="card-header text-center"><%= @project.name %></h1>
+  <h4 class="card-body text-center"><%= @project.body %></h4>
+</div>
+  <div class="text-center mt-4">
+    <%= link_to project_tasks_path(@project, @task), class: 'btn btn-success btn-lg', role: 'button' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" class="align-middle"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+      Tasks
+    <% end %>
+
+    <%= link_to project_inboxes_path(@project, @task), class: 'btn btn-success btn-lg', role: 'button' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="align-middle"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M160 368c26.5 0 48 21.5 48 48v16l72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16V352c0 8.8 7.2 16 16 16h96zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3V474.7v-6.4V468v-4V416H112 64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H448c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H309.3L208 492z"/></svg>
+      Topics
+    <% end %>
+
+   
+
+    <% if current_user == @project.user %>
+      <%= link_to new_project_project_admin_path(@project, @task), class: 'btn btn-success btn-lg', role: 'button' do %>
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" class="align-middle"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z"/></svg>
+        Add Admin
+      <% end %>
+    <% end %>
+
+    <br>
+    <br>
+    <br>
+    <%if current_user ==  @project.user%>
+    <%= button_to "Destroy this project", @project, method: :delete, class: 'btn btn-danger btn-lg'%> <br>
+    <% end %>
+  </div>
+</div>
+
+
+

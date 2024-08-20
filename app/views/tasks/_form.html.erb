@@ -1,0 +1,27 @@
+<div class="center">
+      <%= simple_form_for([@project, @task], class: 'needs-validation') do |f| %>
+    <div class="inputbox">
+      <%# <input type="text" required="required"> %>
+	  <%= f.text_field :title, class: 'form-control', required: true %>
+      <span>Title</span>
+    </div>
+    <div class="inputbox">
+      <%# <input type="text" required="required"> %>
+	  <%= f.text_field :body, class: 'form-control', required: true %>
+      <span>Description</span>
+    </div>
+
+
+      <%= f.check_box :completed, class: 'checkbox-style' %>
+<br><br>
+    <div class="inputbox">
+      <%# <input type="button" value="submit"> %>
+	  <%= f.submit 'Save' %>
+    </div>
+  
+  <% end %>
+  
+</div>
+
+
+

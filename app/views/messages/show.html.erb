@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @message %>
+
+
+  <div>
+    <%= link_to "Edit this message", edit_project_inbox_message_path(@message) %> |
+    <%= link_to "Back to messages", project_inbox_path(@project,@inbox) %>
+    <%= button_to "Destroy this message", [@project,@inbox,@message], method: :delete %>
+  </div>
+

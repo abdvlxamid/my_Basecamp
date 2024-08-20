@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'new_project' %>
+
+<main class="content-wrap">
+		<header class="content-head">
+			<h1>New Project</h1>
+				
+			<div class="action">
+				<%# <button> %>
+        <%= link_to 'Back', projects_path, class: 'button-18' %>
+				<%# </button> %>
+			</div>
+		</header> <br />
+		
+		<div class="content">
+
+	<br>
+
+<br>
+
+<br>
+
+
+<%= render "form", project: @project %>
+
+
+<br>
+		</div>
+	</main>
+

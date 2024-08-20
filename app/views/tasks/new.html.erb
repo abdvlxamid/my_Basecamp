@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= stylesheet_link_tag 'new_project' %>
+
+<main class="content-wrap">
+		<header class="content-head">
+			<h1>New Task</h1>
+				
+			<div class="action">
+				<%# <button> %>
+        <%= link_to 'Back', project_tasks_path(@project), class: 'button-18' %>
+				<%# </button> %>
+			</div>
+		</header> <br />
+		
+		<div class="content">
+
+	<br>
+
+<br>
+
+<br>
+
+
+<%= render "form", task: @task %>
+
+<br>
+		</div>
+	</main>

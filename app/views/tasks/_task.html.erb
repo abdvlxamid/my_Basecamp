@@ -1,0 +1,33 @@
+<div class="card bg-light">
+  <div class="card-header">
+    <h4 class="card-title"><%= task.title %></h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= task.body %></p>
+  </div>
+  
+    <%= simple_form_for([@project, task], remote: true, html: { class: 'form-inline' }) do |f| %>
+      <div class="form-check form-check-inline mb-3">
+        <%= f.label :completed, class: 'form-check-label' do %>
+          <%= f.check_box :completed, class: 'form-check-input mr-1' %>
+          Completed?
+        <% end %>
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

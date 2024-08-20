@@ -1,0 +1,42 @@
+<main class="content-wrap">
+		<header class="content-head">
+			<h1>Attachments</h1>
+				
+			<div class="action">
+				<%# <button> %>
+        <%= link_to 'New Attachment', new_project_drop_path(@project), class: 'button-18' %>
+				<%# </button> %>
+			</div>
+		</header> <br />
+		
+		<div class="content">
+
+		
+			<section class="person-boxes">
+      
+       <% @drops.each do |drop| %>
+        
+      
+				<div class="person-box">
+        
+					
+					<div class="box-bio">
+						<h2 class="bio-name"><%= drop.title %></h2>
+						<p class="bio-position"><%= drop.description %></p>
+					</div>
+					
+					<div class="box-actions">
+						<button>
+            <%= link_to 'Download',  rails_blob_path(drop.file, disposition: "attachment") %>
+            </button>
+            <%= link_to 'Delete', project_drop_path(@project,drop),'data-turbo-method': :delete, onclick: "confirm('Are you sure!')" %>
+
+					</div>
+
+				</div>
+      <% end %>
+				
+
+			</section>
+		</div>
+	</main>

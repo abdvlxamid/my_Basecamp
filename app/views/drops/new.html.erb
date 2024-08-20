@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'new_project' %>
+
+<main class="content-wrap">
+		<header class="content-head">
+			<h1>New Attachment</h1>
+				
+			<div class="action">
+				<%# <button> %>
+        <%= link_to 'Back', project_drops_path(@project), class: 'button-18' %>
+				<%# </button> %>
+			</div>
+		</header> <br />
+		
+		<div class="content">
+
+	<br>
+
+<br>
+
+<br>
+
+
+<%= render "form", drop: @drop %>
+
+
+<br>
+		</div>
+	</main>
+
